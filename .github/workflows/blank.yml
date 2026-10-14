@@ -1,0 +1,30 @@
+# .github/workflows/test.yml
+
+name: Test
+on:
+  push:
+  workflow_dispatch:
+jobs:
+  test:
+    timeout-minutes: 10  # Increase this if the job needs more time.
+    runs-on: ${{ matrix.os }}
+    strategy:
+      fail-fast: false  # Let every job finish.
+      matrix:
+        os:
+          - ubuntu-22.04
+          - ubuntu-24.04
+          - windows-2022
+          - windows-2025
+          - macos-26
+          - macos-26-intel
+    steps:
+      - name: Install Qt
+        uses: jdpurcell/install-qt-action@v5
+        with:
+          use-naqt: true
+          setup-python: false
+          version: 5.15.2
+          cache: false
+          dir: ${{ github.workspace }}/Qt
+          archives: qtbase qtsvg qttools qttranslations
