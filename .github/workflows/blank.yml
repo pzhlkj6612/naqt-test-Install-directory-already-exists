@@ -19,6 +19,9 @@ jobs:
           - macos-26
           - macos-26-intel
     steps:
+      - run: |
+          mkdir -p '${{ github.workspace }}/Qt'
+
       - name: Install Qt
         uses: jdpurcell/install-qt-action@v5
         with:
