@@ -18,9 +18,13 @@ jobs:
           - windows-2025
           - macos-26
           - macos-26-intel
+        dir:
+          - '${{ github.workspace }}/Qt/Qt/'
+          - '${{ github.workspace }}/Qt/Qt/5.15.2/'
+          - '${{ github.workspace }}/Qt/Qt/5.15.2/gcc_64/'
     steps:
       - run: |
-          mkdir -p '${{ github.workspace }}/Qt/Qt/5.15.2/gcc_64/'
+          mkdir -p '${{ matrix.dir }}'
         shell: bash
 
       - name: Install Qt
