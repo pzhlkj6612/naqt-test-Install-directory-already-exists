@@ -19,9 +19,9 @@ jobs:
           - macos-26
           - macos-26-intel
         dir:
-          - '${{ github.workspace }}/Qt/Qt/'
-          - '${{ github.workspace }}/Qt/Qt/5.15.2/'
-          - '${{ github.workspace }}/Qt/Qt/5.15.2/gcc_64/'
+          - "${{ github.workspace }}/Qt/Qt/"
+          - "${{ github.workspace }}/Qt/Qt/5.15.2/"
+          - "${{ github.workspace }}/Qt/Qt/5.15.2/gcc_64/"
     steps:
       - run: |
           mkdir -p '${{ matrix.dir }}'
