@@ -20,7 +20,8 @@ jobs:
           - macos-26-intel
     steps:
       - run: |
-          mkdir -p '${{ github.workspace }}/Qt'
+          mkdir -p '${{ github.workspace }}/Qt/Qt/5.15.2/gcc_64/lib/pkgconfig'
+        shell: bash
 
       - name: Install Qt
         uses: jdpurcell/install-qt-action@v5
